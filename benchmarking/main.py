@@ -3,6 +3,7 @@ import sys
 import os
 from benchmarking.workload.workload import runWorkload
 from benchmarking.data_types.data_types import IndexTypes, WorkloadTypes
+from benchmarking.results import writeDataInCSV
 import config
 
 def main():
@@ -19,6 +20,7 @@ def main():
         config.run_id = run_id
 
     runWorkload(workload_names, index_type, workload_type)
+    # writeDataInCSV(workload_names, index_type, workload_type)
 
 
 if __name__ == "__main__":
