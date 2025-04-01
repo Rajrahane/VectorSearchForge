@@ -31,11 +31,11 @@ def indexData(d:int, xb:np.ndarray, ids:np.ndarray, indexingParams:dict, space_t
     cagraIndexIVFPQConfig.kmeans_trainset_fraction = 0.5 if indexingParams.get('kmeans_trainset_fraction') == None else indexingParams['kmeans_trainset_fraction']
     cagraIndexIVFPQConfig.force_random_rotation = True
     cagraIndexIVFPQConfig.conservative_memory_allocation = True
-    cagraIndexConfig.ivf_pq_params = cagraIndexIVFPQConfig
+    cagraIndexConfig.set_ivf_pq_params(cagraIndexIVFPQConfig)
 
     cagraIndexSearchIVFPQConfig = faiss.IVFPQSearchCagraConfig()
     cagraIndexSearchIVFPQConfig.n_probes = 20 if indexingParams.get('n_probes') == None else indexingParams['n_probes']
-    cagraIndexConfig.ivf_pq_search_params = cagraIndexSearchIVFPQConfig
+    cagraIndexConfig.set_ivf_pq_search_params(cagraIndexSearchIVFPQConfig)
 
     print("Creating GPU Index.. with IVF_PQ")
     cagraIVFPQIndex = faiss.GpuIndexCagra(res, d, metric, cagraIndexConfig)

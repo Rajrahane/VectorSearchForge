@@ -19,6 +19,9 @@ def main():
     if run_id is not None:
         config.run_id = run_id
 
+    if workload_type != WorkloadTypes.INDEX_AND_SEARCH:
+        workload_type = WorkloadTypes.from_str(workload_type)
+
     runWorkload(workload_names, index_type, workload_type)
     # writeDataInCSV(workload_names, index_type, workload_type)
 
