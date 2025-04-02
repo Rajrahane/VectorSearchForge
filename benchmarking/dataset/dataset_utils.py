@@ -58,7 +58,7 @@ def prepare_indexing_dataset(datasetFile: str, normalize: bool = None, docToRead
     index_dataset: HDF5DataSet = HDF5DataSet(datasetFile, Context.INDEX)
 
     logging.info(f"Total number of docs that we will read for indexing: {index_dataset.size() if docToRead == -1 else docToRead}")
-    xb: np.ndarray = index_dataset.read(index_dataset.size() if docToRead == -1 or docToRead is None else docToRead)
+    xb: np.ndarray = index_dataset.read(index_dataset.size() if docToRead == -1 or docToRead is None else docToRead).astype(dtype = np.float32)
     d: int = len(xb[0])
     ids = [i for i in range(len(xb))]
     if normalize:
@@ -79,7 +79,7 @@ def prepare_indexing_dataset(datasetFile: str, normalize: bool = None, docToRead
 def prepare_search_dataset(datasetFile: str, normalize: bool = None) -> tuple[int, np.ndarray, HDF5DataSet]:
     logging.info(f"Reading data set from file: {datasetFile}")
     search_dataset: HDF5DataSet = HDF5DataSet(datasetFile, Context.QUERY)
-    xq: np.ndarray = search_dataset.read(search_dataset.size())
+    xq: np.ndarray = search_dataset.read(search_dataset.size()).astype(dtype = np.float32)
     gt:HDF5DataSet = HDF5DataSet(datasetFile, Context.NEIGHBORS)
     d: int = len(xq[0])
     logging.info("Dataset info : ")
