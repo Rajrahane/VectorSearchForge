@@ -11,15 +11,6 @@ from benchmarking.utils.common_utils import ensureDir
 import json
 import time
 
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    handlers=[
-        logging.FileHandler('/benchmarking/files/vector_search.log'),
-        logging.StreamHandler()
-    ]
-)
-
 
 
 def runWorkload(workloadNames: List[str], indexTypeStr: str, workloadType: WorkloadTypes):
