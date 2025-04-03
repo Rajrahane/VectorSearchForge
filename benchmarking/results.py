@@ -7,7 +7,6 @@ import sys
 from benchmarking.data_types.data_types import IndexTypes, WorkloadTypes
 from benchmarking.utils.common_utils import ensureDir, formatTimingMetricsValue, readAllWorkloads
 
-logging.basicConfig(level=logging.INFO)
 
 def persistMetricsAsCSV(workloadType: WorkloadTypes, allMetrics: dict, workloadName: str, indexType: IndexTypes):
     file_path = ensureDir(f"results/{workloadName}")

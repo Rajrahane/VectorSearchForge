@@ -54,6 +54,15 @@ def decompress_dataset(filePath:str, compressionType:str, outputFile:str):
 
 @timer_func
 def prepare_indexing_dataset(datasetFile: str, normalize: bool = None, docToRead:int = -1) -> tuple[int, np.ndarray, list]:
+    dataset_name = datasetFile.split(".")[-2].split("/")[-1]
+    logging.info(f"Checking if dataset name: {dataset_name} exists")
+    dir_path = ensureDir("numpy_files")
+    if os.path.exists(f"{dir_path}/{dataset_name}.npy"):
+        logging.info(f"Dataset {dataset_name} exists")
+        xb = np.load(f"{dir_path}/{dataset_name}.npy", mmap_mode='r+')
+        d = len(xb[0])
+        ids = [i for i in range(len(xb))]
+        return d, xb, ids
     logging.info(f"Reading data set from file: {datasetFile}")
     index_dataset: HDF5DataSet = HDF5DataSet(datasetFile, Context.INDEX)
 
@@ -66,6 +75,9 @@ def prepare_indexing_dataset(datasetFile: str, normalize: bool = None, docToRead
         xb = xb / np.linalg.norm(xb)
         logging.info("Completed normalization...")
 
+    np.save(f"{dir_path}/{dataset_name}.npy",xb)
+    del xb
+    xb = np.load(f"{dir_path}/{dataset_name}.npy", mmap_mode='r+')
     logging.info("Dataset info : ")
     logging.info(f"Dimensions: {d}")
     logging.info(f"Total Vectors: {len(xb)}")
@@ -90,4 +102,6 @@ def prepare_search_dataset(datasetFile: str, normalize: bool = None) -> tuple[in
         logging.info("Doing normalization...")
         xq = xq / np.linalg.norm(xq)
         logging.info("Completed normalization...")
+    # save some disk space
+    os.remove(datasetFile)
     return d, xq, gt

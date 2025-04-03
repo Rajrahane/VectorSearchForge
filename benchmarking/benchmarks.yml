@@ -53,21 +53,21 @@ gpu:
     normalize: false
     indexing-parameters:
       - { "refine_rate": 1, "kmeans_trainset_fraction": 0.1 }
-      - { "refine_rate": 1, "kmeans_trainset_fraction": 0.2 }
-      - { "refine_rate": 1, "kmeans_trainset_fraction": 0.4 }
-      - { "refine_rate": 1, "kmeans_trainset_fraction": 0.5 }
-      - { "refine_rate": 2, "kmeans_trainset_fraction": 0.1 }
-      - { "refine_rate": 2, "kmeans_trainset_fraction": 0.2 }
-      - { "refine_rate": 2, "kmeans_trainset_fraction": 0.4 }
-      - { "refine_rate": 2, "kmeans_trainset_fraction": 0.5 }
-      - { "refine_rate": 3, "kmeans_trainset_fraction": 0.1 }
-      - { "refine_rate": 3, "kmeans_trainset_fraction": 0.2 }
-      - { "refine_rate": 3, "kmeans_trainset_fraction": 0.4 }
-      - { "refine_rate": 3, "kmeans_trainset_fraction": 0.5 }
-      - { "refine_rate": 4, "kmeans_trainset_fraction": 0.1 }
-      - { "refine_rate": 4, "kmeans_trainset_fraction": 0.2 }
-      - { "refine_rate": 4, "kmeans_trainset_fraction": 0.4 }
-      - { "refine_rate": 4, "kmeans_trainset_fraction": 0.5 }
+#      - { "refine_rate": 1, "kmeans_trainset_fraction": 0.2 }
+#      - { "refine_rate": 1, "kmeans_trainset_fraction": 0.4 }
+#      - { "refine_rate": 1, "kmeans_trainset_fraction": 0.5 }
+#      - { "refine_rate": 2, "kmeans_trainset_fraction": 0.1 }
+#      - { "refine_rate": 2, "kmeans_trainset_fraction": 0.2 }
+#      - { "refine_rate": 2, "kmeans_trainset_fraction": 0.4 }
+#      - { "refine_rate": 2, "kmeans_trainset_fraction": 0.5 }
+#      - { "refine_rate": 3, "kmeans_trainset_fraction": 0.1 }
+#      - { "refine_rate": 3, "kmeans_trainset_fraction": 0.2 }
+#      - { "refine_rate": 3, "kmeans_trainset_fraction": 0.4 }
+#      - { "refine_rate": 3, "kmeans_trainset_fraction": 0.5 }
+#      - { "refine_rate": 4, "kmeans_trainset_fraction": 0.1 }
+#      - { "refine_rate": 4, "kmeans_trainset_fraction": 0.2 }
+#      - { "refine_rate": 4, "kmeans_trainset_fraction": 0.4 }
+#      - { "refine_rate": 4, "kmeans_trainset_fraction": 0.5 }
     search-parameters:
       - { "ef_search": 256 }
   cohere-768-ip:
@@ -79,21 +79,21 @@ gpu:
     space-type: innerproduct
     indexing-parameters:
       - { "refine_rate": 1, "kmeans_trainset_fraction": 0.1 }
-      - { "refine_rate": 1, "kmeans_trainset_fraction": 0.2 }
-      - { "refine_rate": 1, "kmeans_trainset_fraction": 0.4 }
-      - { "refine_rate": 1, "kmeans_trainset_fraction": 0.5 }
-      - { "refine_rate": 2, "kmeans_trainset_fraction": 0.1 }
-      - { "refine_rate": 2, "kmeans_trainset_fraction": 0.2 }
-      - { "refine_rate": 2, "kmeans_trainset_fraction": 0.4 }
-      - { "refine_rate": 2, "kmeans_trainset_fraction": 0.5 }
-      - { "refine_rate": 3, "kmeans_trainset_fraction": 0.1 }
-      - { "refine_rate": 3, "kmeans_trainset_fraction": 0.2 }
-      - { "refine_rate": 3, "kmeans_trainset_fraction": 0.4 }
-      - { "refine_rate": 3, "kmeans_trainset_fraction": 0.5 }
-      - { "refine_rate": 4, "kmeans_trainset_fraction": 0.1 }
-      - { "refine_rate": 4, "kmeans_trainset_fraction": 0.2 }
-      - { "refine_rate": 4, "kmeans_trainset_fraction": 0.4 }
-      - { "refine_rate": 4, "kmeans_trainset_fraction": 0.5 }
+#      - { "refine_rate": 1, "kmeans_trainset_fraction": 0.2 }
+#      - { "refine_rate": 1, "kmeans_trainset_fraction": 0.4 }
+#      - { "refine_rate": 1, "kmeans_trainset_fraction": 0.5 }
+#      - { "refine_rate": 2, "kmeans_trainset_fraction": 0.1 }
+#      - { "refine_rate": 2, "kmeans_trainset_fraction": 0.2 }
+#      - { "refine_rate": 2, "kmeans_trainset_fraction": 0.4 }
+#      - { "refine_rate": 2, "kmeans_trainset_fraction": 0.5 }
+#      - { "refine_rate": 3, "kmeans_trainset_fraction": 0.1 }
+#      - { "refine_rate": 3, "kmeans_trainset_fraction": 0.2 }
+#      - { "refine_rate": 3, "kmeans_trainset_fraction": 0.4 }
+#      - { "refine_rate": 3, "kmeans_trainset_fraction": 0.5 }
+#      - { "refine_rate": 4, "kmeans_trainset_fraction": 0.1 }
+#      - { "refine_rate": 4, "kmeans_trainset_fraction": 0.2 }
+#      - { "refine_rate": 4, "kmeans_trainset_fraction": 0.4 }
+#      - { "refine_rate": 4, "kmeans_trainset_fraction": 0.5 }
     search-parameters:
       - { "ef_search": 256 }
   cohere-10M-768-ip:
@@ -106,10 +106,10 @@ gpu:
     indexing-parameters:
       - { "refine_rate": 1, "kmeans_trainset_fraction": 0.1 }
       - { "refine_rate": 2, "kmeans_trainset_fraction": 0.5 }
-#      - { "refine_rate": 1, "kmeans_trainset_fraction": 0.2 }
+      - { "refine_rate": 1, "kmeans_trainset_fraction": 0.2 }
 #      - { "refine_rate": 1, "kmeans_trainset_fraction": 0.4 }
 #      - { "refine_rate": 1, "kmeans_trainset_fraction": 0.5 }
-#      - { "refine_rate": 2, "kmeans_trainset_fraction": 0.1 }
+      - { "refine_rate": 2, "kmeans_trainset_fraction": 0.1 }
 #      - { "refine_rate": 2, "kmeans_trainset_fraction": 0.2 }
 #      - { "refine_rate": 2, "kmeans_trainset_fraction": 0.4 }
 #      - { "refine_rate": 2, "kmeans_trainset_fraction": 0.5 }
