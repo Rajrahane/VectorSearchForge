@@ -32,7 +32,7 @@ The environment variables are:
    index_type=gpu
    workload=sift-128,gist-960
    ```
-10. Run the docker container: `docker run --env_file env_variables -v /docker-mountpoint:/benchmarking/files --gpus all <your-dockerhub-repo>:<tag>`
+10. Run the docker container: `docker run --env-file env_variables -v /docker-mountpoint:/benchmarking/files --gpus all <your-dockerhub-repo>:<tag>`
     - One such docker image is here: `rchitale7/remote-index-build-service:vector-benchmark`
     - You can run the docker container in the background with `-d` option
     - Note that downloading the sift-128 and gist-960 datasets may fail. In that case, manually download 
