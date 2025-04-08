@@ -33,9 +33,13 @@ def main():
     if workload_type != WorkloadTypes.INDEX_AND_SEARCH:
         workload_type = WorkloadTypes.from_str(workload_type)
 
-    if run_type == "all" or "run_workload":
+    logging.info(f"Running with workload: {workload_names}, "
+                 f"index_type: {index_type}, workload_type: {workload_type}, "
+                 f"run_id: {run_id}, run_type: {run_type}"
+                 )
+    if run_type == "all" or run_type == "run_workload":
         runWorkload(workload_names, index_type, workload_type)
-    if run_type == "all" or "write_results":
+    if run_type == "all" or run_type == "write_results":
         writeDataInCSV(workload_names, index_type, workload_type)
 
 
