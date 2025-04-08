@@ -24,8 +24,9 @@ The environment variables are:
    - `workload`: name of the dataset (such as `sift-128`). Can be a comma separated list of datasets, 
    to benchmark with multiple datasets
    - `workload_type`: Can be `INDEX`, `INDEX_AND_SEARCH`, or `INDEX`. Defaults to `INDEX_AND_SEARCH`
-   - `index_type`: Can be `gpu`, `cpu`, or `all`
+   - `index_type`: Can be `gpu`, `cpu`, or `all`. Defaults to `all`
    - `run_id`: Sub-folder to store results. Defaults to `default_run_id`
+   - `run_type`: Can be `run_workload`, `write_results` or `all`. Defaults to `all`. 
    - For example, to run the GPU Faiss benchmarks with sift-128 for indexing and searching, 
    the environment variables file will look like:
    ```

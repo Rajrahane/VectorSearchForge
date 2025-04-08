@@ -22,6 +22,7 @@ def main():
     index_type = os.environ.get("index_type", "all")
     workload_type = os.environ.get("workload_type", WorkloadTypes.INDEX_AND_SEARCH)
     run_id = os.environ.get("run_id", None)
+    run_type = os.environ.get("run_type", "all")
 
     if len(workload_names) != 0:
         workload_names = workload_names.split(",")
@@ -32,8 +33,10 @@ def main():
     if workload_type != WorkloadTypes.INDEX_AND_SEARCH:
         workload_type = WorkloadTypes.from_str(workload_type)
 
-    runWorkload(workload_names, index_type, workload_type)
-    # writeDataInCSV(workload_names, index_type, workload_type)
+    if run_type == "all" or "run_workload":
+        runWorkload(workload_names, index_type, workload_type)
+    if run_type == "all" or "write_results":
+        writeDataInCSV(workload_names, index_type, workload_type)
 
 
 if __name__ == "__main__":
